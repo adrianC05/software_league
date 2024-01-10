@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\TeamsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\IndexController;
 
@@ -21,6 +22,6 @@ Route::get('/', function () {
 Route::group(['prefix'=> 'admin'],function(){
 
 Route::get('Panel-Administrativo', [IndexController::class, 'index'])->name('dashboard');
-
+Route::get('teams', [TeamsController::class,'render'])->name('teams');
 });
 
