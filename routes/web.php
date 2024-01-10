@@ -19,9 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix'=> 'admin'],function(){
-
-Route::get('Panel-Administrativo', [IndexController::class, 'index'])->name('dashboard');
-Route::get('teams', [TeamsController::class,'render'])->name('teams');
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('Panel-Administrativo', [IndexController::class, 'index'])->name('dashboard');
+    Route::get('teams', [TeamsController::class, 'render'])->name('teams');
 });
-
