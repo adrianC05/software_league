@@ -8,6 +8,6 @@ class TeamsController extends Component
 {
     public function render()
     {
-        return view('livewire.teams-controller');
+        return view('livewire.teams');
     }
 }
