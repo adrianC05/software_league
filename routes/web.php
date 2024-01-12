@@ -19,7 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'admin'], function () {
+// Accedes a las siguientes rutas siempre y cuando estes autenticado
+
+Route::group(['middleware' => 'auth'], function () {
     Route::get('Panel-Administrativo', [IndexController::class, 'index'])->name('dashboard');
-    Route::get('teams', [TeamsController::class, 'render'])->name('teams');
+    Route::get('teams', [TeamsController::class, 'render'])->name('teams.index');
 });
