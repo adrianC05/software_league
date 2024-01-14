@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Team extends Model
+class Egress extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'goodmother', 'enrollment', 'status', 'description'];
+    protected $guarded = [];
 }

@@ -1,8 +1,9 @@
 <?php
 
-use App\Livewire\TeamsController;
+use App\Livewire\Teams;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\IndexController;
+use App\Livewire\Egresses;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,5 +24,10 @@ Route::get('/', function () {
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('Panel-Administrativo', [IndexController::class, 'index'])->name('dashboard');
-    Route::get('teams', [TeamsController::class, 'render'])->name('teams.index');
+
+    // Teams
+    Route::get('teams', [Teams::class, 'render'])->name('teams.index');
+
+    // Egress
+    Route::get('egress', [Egresses::class, 'render'])->name('egress.index');
 });
