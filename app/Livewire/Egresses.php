@@ -9,10 +9,11 @@ class Egresses extends Component
 {
 
     public $egress_id, $description, $value, $date;
+    public $egresses, $modalForm = false;
 
     public function render()
     {
-        $egresses = Egress::latest()->paginate(5);
+        $egresses = Egress::paginate(5);
         return view('livewire.egress.index', ['egresses' => $egresses]);
     }
 }

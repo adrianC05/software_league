@@ -10,8 +10,8 @@
             Equipo</button>
 
         <table
-            class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 border-collapse rounded-lg overflow-hidden">
-            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 ">
+            class="w-full text-sm text-left rtl:text-right text-gray-500 border-collapse rounded-lg overflow-hidden">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
                 <tr>
                     <th scope="col" class="px-6 py-3">Descripción</th>
                     <th scope="col" class="px-6 py-3">Valor</th>
@@ -22,9 +22,9 @@
             <tbody>
                 @foreach ($egresses as $egress)
                     <tr
-                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        class="bg-white border-b hover:bg-gray-50">
                         <td class="px-6 py-3">{{ $egress->description }}</td>
-                        <!-- <td class="px-6 py-4">{{ $egress->goodmother }}</td> -->
+                        <!-- <td class="px-6 py-4">{{ $egress->value }}</td> -->
                         <td class="px-6 py-3">{{ number_format($egress->enrollment, 2) }}</td>
                         <td class="px-6 py-3">
                             <button wire:click="edit({{ $egress->id }})"

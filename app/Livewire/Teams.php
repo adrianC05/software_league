@@ -2,45 +2,36 @@
 
 namespace App\Livewire;
 
-use App\Models\Team;
 use Livewire\Component;
+use App\Models\Team;
 use Livewire\WithPagination;
 
 class Teams extends Component
 {
-    public $team_id, $goodmother, $enrollment, $status, $description;
-    public $teams;
-    public $modalForm = false;
-
+    public $team_id, $name, $goodmother, $enrollment, $status, $description;
+    public $isOpen = 0;
     use WithPagination;
-
-    public function render()
-    {
-        $this->teams = Team::paginate(5);
-        return view('livewire.teams.index', ['teams' => $this->teams, 'modalForm' => $this->modalForm]);
-    }
 
     public function create()
     {
-        $this->resetInputFields();
         $this->openModal();
     }
 
+    public function render()
+    {
+        $teams = Team::paginate(5);
+        //compact teams and isOpen to pass to the view
+        return view('livewire.teams.index', ['teams' => $teams], ['isOpen' => $this->isOpen]);
+    }
+
+
     public function openModal()
     {
-        $this->modalForm = true;
+        $this->isOpen = true;
     }
 
     public function closeModal()
     {
-        $this->modalForm = false;
-    }
-
-    private function resetInputFields()
-    {
-        $this->goodmother = '';
-        $this->enrollment = '';
-        $this->status = '';
-        $this->description = '';
+        $this->isOpen = false;
     }
 }
