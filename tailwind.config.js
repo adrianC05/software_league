@@ -14,6 +14,7 @@ export default {
         "./resources/**/*.vue",
     ],
 
+
     theme: {
         extend: {
             fontFamily: {
@@ -22,5 +23,10 @@ export default {
         },
     },
 
-    plugins: [forms, typography],
+    plugins: [
+        forms,
+        typography,
+        require('@tailwindcss/forms')],
+
+
 };
