@@ -2,12 +2,14 @@
 
 namespace App\Livewire;
 
+use App\Models\Team;
 use Livewire\Component;
 
 class TeamsController extends Component
 {
     public function render()
     {
-        return view('livewire.teams-controller');
+        $teams = Team::all();
+        return view('livewire.teams.index', ['teams' => $teams]);
     }
 }

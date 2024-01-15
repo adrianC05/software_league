@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
+            $table->string('team');
+            $table->string('goodmother')->nullable();
+            $table->string('enrollment')->nullable();
+            //Status: 0 = Inactivo, 1 = Activo
+            $table->boolean('status')->default(1)->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

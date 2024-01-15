@@ -16,8 +16,8 @@
 
 </head>
 
-<body class="antialiased ">
-<div class=
+<body class="antialiased">
+<div class=   
     <div
         class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 selection:bg-red-500 selection:text-white">
         <!---------------------------Barra de Opciones------------------------->
@@ -58,7 +58,6 @@
                     <div
                         class="scale-100 p-6 bg-white from-gray-700/50 via-transparent rounded-lg shadow-2xl shadow-gray-500/20 flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
                         <div>
-
 
                             <h2 class="mt-6 text-xl font-semibold text-gray-900">TABLA DE POSICIONES</h2>
 
@@ -317,6 +316,8 @@
                     Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                 </div>
             </div>
+
+
         </div>
     </div>
 </body>

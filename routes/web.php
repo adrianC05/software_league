@@ -18,12 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix'=> 'admin'],function(){
+// Accedes a las siguientes rutas siempre y cuando estes autenticado
 
-Route::get('Panel-Administrativo', [IndexController::class, 'index'])->name('dashboard');
-Route::get('teams', [TeamsController::class,'render'])->name('teams');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('Panel-Administrativo', [IndexController::class, 'index'])->name('dashboard');
+    Route::get('teams', [TeamsController::class, 'render'])->name('teams.index');
 });
-
 Route::get('/descargar-pdf', function () {
     $archivoPdf = public_path('descargas/protocolo_software_league.pdf');
     return response()->download($archivoPdf, 'Protocolo_software_league.pdf');
