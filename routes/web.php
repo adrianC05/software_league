@@ -1,5 +1,5 @@
 <?php
-
+use App\Livewire\TeamsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\IndexController;
 
@@ -21,6 +21,14 @@ Route::get('/', function () {
 Route::group(['prefix'=> 'admin'],function(){
 
 Route::get('Panel-Administrativo', [IndexController::class, 'index'])->name('dashboard');
-
+Route::get('teams', [TeamsController::class,'render'])->name('teams');
 });
 
+Route::get('/descargar-pdf', function () {
+    $archivoPdf = public_path('descargas/protocolo_software_league.pdf');
+    return response()->download($archivoPdf, 'Protocolo_software_league.pdf');
+});
+Route::get('/descargar1-pdf', function () {
+    $archivoPdf = public_path('descargas/Plantillas.pdf');
+    return response()->download($archivoPdf, 'Plantilla de incripción.pdf');
+});
